@@ -1,0 +1,42 @@
+<!-- $Id: package.html 2923 2010-04-26 21:34:33Z johann $ -->
+<html>
+<head>
+<title>Untitled Document</title>
+</head>
+<body>
+ <p>Implementations of high-performance String searching algorithms.</p>
+ <p>Please see {@link com.eaio.stringsearch.StringSearch} for the basics.</p>
+ <h3>Included algorithms</h3>
+ <ul>
+  <li>General purpose
+   <ul>
+    <li>{@link com.eaio.stringsearch.BNDM}</li>
+    <li>{@link com.eaio.stringsearch.BoyerMooreHorspool} (fastest for
+     searching in <code>byte</code> arrays)</li>
+    <li>{@link com.eaio.stringsearch.BoyerMooreHorspoolRaita} (fastest
+     for searching in <code>char</code> arrays and Strings)</li>
+   </ul>
+  </li>
+  <li>Searching with wildcards (don't-care-symbols)
+   <ul>
+    <li>{@link com.eaio.stringsearch.BNDMWildcards}</li>
+   </ul>
+  </li>
+  <li>Searching with mismatches
+   <ul>
+    <li>{@link com.eaio.stringsearch.ShiftOrMismatches}</li>
+   </ul>
+  </li>
+  <li>Case-insensitive searching
+   <ul>
+    <li>{@link com.eaio.stringsearch.BNDMCI}</li>
+   </ul>
+  </li>
+  <li>Case-insensitive searching with wildcards (don't-care-symbols)
+   <ul>
+    <li>{@link com.eaio.stringsearch.BNDMWildcardsCI}</li>
+   </ul>
+  </li>
+ </ul>
+</body>
+</html>
