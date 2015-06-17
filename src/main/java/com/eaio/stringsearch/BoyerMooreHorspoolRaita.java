@@ -112,7 +112,6 @@ public class BoyerMooreHorspoolRaita extends BoyerMooreHorspool {
         }
 
         return -1;
-
     }
 
     /**
@@ -177,7 +176,6 @@ public class BoyerMooreHorspoolRaita extends BoyerMooreHorspool {
         }
 
         return -1;
-
     }
 
 }

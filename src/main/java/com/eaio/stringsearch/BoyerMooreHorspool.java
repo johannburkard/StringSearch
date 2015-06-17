@@ -130,7 +130,6 @@ public class BoyerMooreHorspool extends StringSearch {
         int[] skip = (int[]) processed;
 
         int i, j, k;
-        
 
         final int lengthMinusOne = pattern.length - 1;
 
@@ -189,7 +188,6 @@ public class BoyerMooreHorspool extends StringSearch {
         }
 
         return -1;
-
     }
 
 }

@@ -28,7 +28,6 @@
  */
 package com.eaio.stringsearch;
 
-
 /**
  * An implementation of the Backwards Non-deterministic DAWG (Directed acyclic
  * word graph) Matching algorithm by Gonzalo Navarro and Mathieu Raffinot. See
@@ -141,7 +140,6 @@ public class BNDM extends StringSearch {
         }
 
         return -1;
-
     }
 
     /**
@@ -175,7 +173,6 @@ public class BNDM extends StringSearch {
         }
 
         return -1;
-
     }
 
     /**

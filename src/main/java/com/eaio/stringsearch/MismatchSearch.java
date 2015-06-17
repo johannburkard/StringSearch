@@ -170,7 +170,6 @@ public abstract class MismatchSearch extends StringSearch {
             Object processed, int k) {
 
         return searchBytes(text, 0, text.length, pattern, processed, k);
-
     }
 
     /**
@@ -192,7 +191,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return searchBytes(text, textStart, text.length, pattern,
                 processBytes(pattern, k), k);
-
     }
 
     /**
@@ -213,7 +211,6 @@ public abstract class MismatchSearch extends StringSearch {
             Object processed, int k) {
 
         return searchBytes(text, textStart, text.length, pattern, processed, k);
-
     }
 
     /**
@@ -236,7 +233,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return searchBytes(text, textStart, textEnd, pattern, processBytes(
                 pattern, k), k);
-
     }
 
     /**
@@ -274,7 +270,6 @@ public abstract class MismatchSearch extends StringSearch {
             char[] pattern, Object processed) {
 
         return searchChars(text, textStart, textEnd, pattern, processed, 0)[0];
-
     }
 
     /**
@@ -307,7 +302,6 @@ public abstract class MismatchSearch extends StringSearch {
             Object processed, int k) {
 
         return searchChars(text, 0, text.length, pattern, processed, k);
-
     }
 
     /**
@@ -327,7 +321,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return searchChars(text, textStart, text.length, pattern,
                 processChars(pattern, k), k);
-
     }
 
     /**
@@ -350,7 +343,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return searchChars(text, textStart, text.length, pattern, processed,
                 k);
-
     }
 
     /**
@@ -370,7 +362,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return searchChars(text, textStart, textEnd, pattern, processChars(
                 pattern, k), k);
-
     }
 
     /**
@@ -428,7 +419,6 @@ public abstract class MismatchSearch extends StringSearch {
             Object processed, int k) {
 
         return searchString(text, 0, text.length(), pattern, processed, k);
-
     }
 
     /**
@@ -448,7 +438,6 @@ public abstract class MismatchSearch extends StringSearch {
             String pattern, int k) {
 
         return searchString(text, textStart, text.length(), pattern, k);
-
     }
 
     /**
@@ -472,7 +461,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return searchString(text, textStart, text.length(), pattern,
                 processed, k);
-
     }
 
     /**
@@ -494,7 +482,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return StringSearch.activeStringAccess.searchString(text, textStart,
                 textEnd, pattern, k, this);
-
     }
 
     /**
@@ -519,7 +506,6 @@ public abstract class MismatchSearch extends StringSearch {
 
         return StringSearch.activeStringAccess.searchString(text, textStart,
                 textEnd, pattern, processed, k, this);
-
     }
 
 }

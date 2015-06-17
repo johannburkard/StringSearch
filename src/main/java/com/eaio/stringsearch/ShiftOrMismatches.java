@@ -114,7 +114,6 @@ public class ShiftOrMismatches extends MismatchSearch {
             }
 
         return new Object[] { T, mask - 1, ovmask, lim, b };
-
     }
 
     /**
@@ -150,7 +149,6 @@ public class ShiftOrMismatches extends MismatchSearch {
             }
 
         return new Object[] { T, mask - 1, ovmask, lim, b };
-
     }
 
     /**
@@ -182,7 +180,6 @@ public class ShiftOrMismatches extends MismatchSearch {
             }
 
         return new int[] { -1, 0 };
-
     }
 
     /**
@@ -214,7 +211,6 @@ public class ShiftOrMismatches extends MismatchSearch {
             }
 
         return new int[] { -1, 0 };
-
     }
 
     /**

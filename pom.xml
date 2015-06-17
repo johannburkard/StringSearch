@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.eaio.stringsearch</groupId>
 	<artifactId>stringsearch</artifactId>
 	<packaging>jar</packaging>
-	<version>2.1</version>
+	<version>2.2</version>
 	<name>StringSearch</name>
 	<description>StringSearch provides implementations of the Boyer-Moore and the Shift-Or (bit-parallel) algorithms. These algorithms are easily five to ten times faster than the naïve implementation found in java.lang.String.</description>
 	<url>http://johannburkard.de/software/stringsearch/</url>
-	<inceptionYear>2004</inceptionYear>
+	<inceptionYear>2003</inceptionYear>
 	<issueManagement>
-		<url>http://johannburkard.de/contact/</url>
+		<system>GitHub</system>
+		<url>https://github.com/johannburkard/StringSearch/issues</url>
 	</issueManagement>
 	<scm>
-		<connection>scm:svn:svn://johannburkard.de/${project.groupId}/trunk</connection>
-		<developerConnection>scm:svn:svn://johannburkard.de/${project.groupId}/trunk</developerConnection>
+		<connection>scm:git:git@github.com:johannburkard/StringSearch.git</connection>
+		<developerConnection>scm:git:git@github.com:johannburkard/StringSearch.git</developerConnection>
+		<url>https://github.com/johannburkard/StringSearch.git</url>
 	</scm>
 	<licenses>
 		<license>
@@ -39,12 +40,15 @@
 		<name>Johann Burkard</name>
 		<url>http://johannburkard.de</url>
 	</organization>
+	<prerequisites>
+		<maven>3.3.3</maven>
+	</prerequisites>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.0</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<source>1.6</source>
@@ -55,7 +59,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
+				<version>2.2.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -68,6 +72,37 @@
 				</executions>
 			</plugin>
 		</plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-resources-plugin</artifactId>
+                                        <versionRange>[2.6,)</versionRange>
+                                        <goals>
+                                            <goal>resources</goal>
+                                            <goal>testResources</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute>
+                                            <runOnIncremental>false</runOnIncremental>
+                                        </execute>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 	</build>
 	<dependencies>
 		<dependency>
@@ -82,7 +117,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.8</version>
+				<version>2.9</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -90,7 +125,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.5.1</version>
+				<version>2.5.2</version>
 			</plugin>
 		</plugins>
 	</reporting>

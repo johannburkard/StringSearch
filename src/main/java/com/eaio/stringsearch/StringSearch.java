@@ -29,6 +29,7 @@
 package com.eaio.stringsearch;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.security.AccessControlException;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
@@ -113,7 +114,6 @@ public abstract class StringSearch {
 
             return instance.searchChars(text.toCharArray(), textStart, textEnd,
                     pattern.toCharArray());
-
         }
 
         /**
@@ -125,7 +125,6 @@ public abstract class StringSearch {
 
             return instance.searchChars(text.toCharArray(), textStart, textEnd,
                     pattern.toCharArray(), k);
-
         }
 
         /**
@@ -137,7 +136,6 @@ public abstract class StringSearch {
 
             return instance.searchChars(text.toCharArray(), textStart, textEnd,
                     pattern.toCharArray(), processed, k);
-
         }
 
         /**
@@ -191,15 +189,11 @@ public abstract class StringSearch {
 
                 }
                 catch (IllegalAccessException ex) {
-                    synchronized (activeStringAccess) {
-                        activeStringAccess = new StringAccess();
-                    }
+                    activeStringAccess = new StringAccess();
                 }
             }
-
             return super.searchString(text, textStart, textEnd, pattern,
                     processed, instance);
-
         }
 
         /**
@@ -220,15 +214,11 @@ public abstract class StringSearch {
                             - o;
                 }
                 catch (IllegalAccessException ex) {
-                    synchronized (activeStringAccess) {
-                        activeStringAccess = new StringAccess();
-                    }
+                    activeStringAccess = new StringAccess();
                 }
             }
-
             return super.searchString(text, textStart, textEnd, pattern,
                     instance);
-
         }
 
         /**
@@ -252,15 +242,11 @@ public abstract class StringSearch {
                     return r;
                 }
                 catch (IllegalAccessException ex) {
-                    synchronized (activeStringAccess) {
-                        activeStringAccess = new StringAccess();
-                    }
+                    activeStringAccess = new StringAccess();
                 }
             }
-
             return super.searchString(text, textStart, textEnd, pattern, k,
                     instance);
-
         }
 
         /**
@@ -284,15 +270,11 @@ public abstract class StringSearch {
                     return r;
                 }
                 catch (IllegalAccessException ex) {
-                    synchronized (activeStringAccess) {
-                        activeStringAccess = new StringAccess();
-                    }
+                    activeStringAccess = new StringAccess();
                 }
             }
-
             return super.searchString(text, textStart, textEnd, pattern,
                     processed, k, instance);
-
         }
 
         /**
@@ -318,9 +300,7 @@ public abstract class StringSearch {
                     return c;
                 }
                 catch (IllegalAccessException ex) {
-                    synchronized (activeStringAccess) {
-                        activeStringAccess = new StringAccess();
-                    }
+                    activeStringAccess = new StringAccess();
                 }
             }
             return super.getChars(s);
@@ -341,7 +321,6 @@ public abstract class StringSearch {
 
                 @Override
                 public Field[] run() throws Exception {
-
                     Field[] stringFields = shortString.getClass().getDeclaredFields();
 
                     Class<? extends char[]> charArray = new char[0].getClass();
@@ -350,8 +329,7 @@ public abstract class StringSearch {
 
                     for (int i = 0; i < stringFields.length; ++i) {
                         final Field field = stringFields[i];
-                        if (field.getType() == charArray &&
-                        						java.lang.reflect.Modifier.isStatic(field.getModifiers()) == false) {
+                        if (field.getType() == charArray && !Modifier.isStatic(field.getModifiers())) {
                             val = stringFields[i];
                             val.setAccessible(true);
                         }
@@ -361,11 +339,8 @@ public abstract class StringSearch {
                             if (field.getInt(shortString) == 0) {
                                 off = stringFields[i];
                             }
-
                         }
-
                     }
-
                     return new Field[] { val, off };
                 }
 
@@ -373,7 +348,6 @@ public abstract class StringSearch {
 
             value = valueOffset[0];
             offset = valueOffset[1];
-
         }
         catch (AccessControlException ex) {
             // Ignored.
@@ -388,7 +362,6 @@ public abstract class StringSearch {
         if (value != null && offset != null) {
             StringSearch.activeStringAccess = new ReflectionStringAccess(value,
                     offset);
-
             try {
                 if (System.getProperty("mrj.version") != null) {
                     crossover = CROSSOVER_MACOSX;
@@ -397,7 +370,6 @@ public abstract class StringSearch {
             catch (SecurityException ex) {
                 // Ignored.
             }
-
         }
         else {
             StringSearch.activeStringAccess = new StringAccess();
@@ -537,7 +509,6 @@ public abstract class StringSearch {
             Object processed) {
 
         return searchBytes(text, textStart, text.length, pattern, processed);
-
     }
 
     /**
@@ -558,7 +529,6 @@ public abstract class StringSearch {
 
         return searchBytes(text, textStart, textEnd, pattern,
                 processBytes(pattern));
-
     }
 
     /**
@@ -646,7 +616,6 @@ public abstract class StringSearch {
             Object processed) {
 
         return searchChars(text, textStart, text.length, pattern, processed);
-
     }
 
     /**
@@ -667,7 +636,6 @@ public abstract class StringSearch {
 
         return searchChars(text, textStart, textEnd, pattern,
                 processChars(pattern));
-
     }
 
     /**
@@ -753,7 +721,6 @@ public abstract class StringSearch {
             Object processed) {
 
         return searchString(text, textStart, text.length(), pattern, processed);
-
     }
 
     /**
@@ -774,7 +741,6 @@ public abstract class StringSearch {
 
         return StringSearch.activeStringAccess.searchString(text, textStart,
                 textEnd, pattern, this);
-
     }
 
     /**
@@ -797,7 +763,6 @@ public abstract class StringSearch {
 
         return StringSearch.activeStringAccess.searchString(text, textStart,
                 textEnd, pattern, processed, this);
-
     }
 
     /**
