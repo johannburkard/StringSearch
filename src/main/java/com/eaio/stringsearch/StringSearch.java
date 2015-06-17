@@ -349,14 +349,16 @@ public abstract class StringSearch {
                     Field val = null, off = null;
 
                     for (int i = 0; i < stringFields.length; ++i) {
-                        if (stringFields[i].getType() == charArray) {
+                        final Field field = stringFields[i];
+                        if (field.getType() == charArray &&
+                        						java.lang.reflect.Modifier.isStatic(field.getModifiers()) == false) {
                             val = stringFields[i];
                             val.setAccessible(true);
                         }
-                        else if (stringFields[i].getType() == Integer.TYPE) {
-                            stringFields[i].setAccessible(true);
+                        else if (field.getType() == Integer.TYPE) {
+                            field.setAccessible(true);
 
-                            if (stringFields[i].getInt(shortString) == 0) {
+                            if (field.getInt(shortString) == 0) {
                                 off = stringFields[i];
                             }
 
