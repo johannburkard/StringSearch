@@ -16,7 +16,7 @@ Or get StringSearch through Maven:
 		<dependency>
 			<groupId>com.eaio.stringsearch</groupId>
 			<artifactId>stringsearch</artifactId>
-			<version>2.1</version>
+			<version>2.2</version>
 		</dependency>
 	</dependencies>
 …
