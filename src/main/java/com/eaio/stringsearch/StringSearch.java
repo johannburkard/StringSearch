@@ -3,9 +3,8 @@
  *
  * Created on 14.06.2003.
  *
- * eaio: StringSearch - high-performance pattern matching algorithms in Java
+ * StringSearch - high-performance pattern matching algorithms in Java
  * Copyright (c) 2003-2015 Johann Burkard (<http://johannburkard.de>)
- * <http://eaio.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
