@@ -62,3 +62,5 @@ StringSearch is licensed under the [MIT License](http://johannburkard.de/softwar
 * [StringSearch on johannburkard.de](http://johannburkard.de/software/stringsearch/)
 * [Maven-generated Site](http://johannburkard.de/software/stringsearch/site/)
 * [APIdoc](http://johannburkard.de/software/stringsearch/site/apidocs/)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-7427410-89/StringSearch/README.md?pixel)](https://github.com/igrigorik/ga-beacon)
